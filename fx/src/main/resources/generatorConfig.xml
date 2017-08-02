@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<context id="context1">
+		<jdbcConnection connectionURL="jdbc:mysql://localhost:3306/fenxiao"
+			driverClass="com.mysql.jdbc.Driver" password="" userId="root" />
+		<javaModelGenerator targetPackage="pers.xym.fx.domain"
+			targetProject="fx\src\main\java" />
+		<sqlMapGenerator targetPackage="pers.xym.fx.mappers"
+			targetProject="fx\src\main\java" />
+		<javaClientGenerator targetPackage="pers.xym.fx.dao"
+			targetProject="fx\src\main\java" type="XMLMAPPER" />
+		<table schema="fx" tableName="fx_goods" enableSelectByExample="flase" domainObjectName="Goods"
+			enableDeleteByExample="false" enableCountByExample="false"
+			enableUpdateByExample="false">
+		</table>
+		<table schema="fx" tableName="fx_order" enableSelectByExample="flase" domainObjectName="Order"
+			enableDeleteByExample="false" enableCountByExample="false"
+			enableUpdateByExample="false">
+		</table>
+		<table schema="fx" tableName="fx_tag" enableSelectByExample="flase" domainObjectName="Tag"
+			enableDeleteByExample="false" enableCountByExample="false"
+			enableUpdateByExample="false">
+		</table>
+		<table schema="fx" tableName="fx_user" enableSelectByExample="flase" domainObjectName="User"
+			enableDeleteByExample="false" enableCountByExample="false"
+			enableUpdateByExample="false">
+		</table>
+		<table schema="fx" tableName="fx_walletlog" enableSelectByExample="flase" domainObjectName="WalletLog"
+			enableDeleteByExample="false" enableCountByExample="false"
+			enableUpdateByExample="false">
+		</table>
+	</context>
+</generatorConfiguration>
