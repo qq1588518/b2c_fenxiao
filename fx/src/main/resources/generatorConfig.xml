@@ -14,21 +14,5 @@
 			enableDeleteByExample="false" enableCountByExample="false"
 			enableUpdateByExample="false">
 		</table>
-		<table schema="fx" tableName="fx_order" enableSelectByExample="flase" domainObjectName="Order"
-			enableDeleteByExample="false" enableCountByExample="false"
-			enableUpdateByExample="false">
-		</table>
-		<table schema="fx" tableName="fx_tag" enableSelectByExample="flase" domainObjectName="Tag"
-			enableDeleteByExample="false" enableCountByExample="false"
-			enableUpdateByExample="false">
-		</table>
-		<table schema="fx" tableName="fx_user" enableSelectByExample="flase" domainObjectName="User"
-			enableDeleteByExample="false" enableCountByExample="false"
-			enableUpdateByExample="false">
-		</table>
-		<table schema="fx" tableName="fx_walletlog" enableSelectByExample="flase" domainObjectName="WalletLog"
-			enableDeleteByExample="false" enableCountByExample="false"
-			enableUpdateByExample="false">
-		</table>
 	</context>
 </generatorConfiguration>
