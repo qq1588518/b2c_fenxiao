@@ -10,7 +10,7 @@
 			targetProject="fx\src\main\java" />
 		<javaClientGenerator targetPackage="pers.xym.fx.dao"
 			targetProject="fx\src\main\java" type="XMLMAPPER" />
-		<table schema="fx" tableName="fx_goods" enableSelectByExample="flase" domainObjectName="Goods"
+		<table schema="fx" tableName="fx_permission" enableSelectByExample="flase" domainObjectName="Permission"
 			enableDeleteByExample="false" enableCountByExample="false"
 			enableUpdateByExample="false">
 		</table>
