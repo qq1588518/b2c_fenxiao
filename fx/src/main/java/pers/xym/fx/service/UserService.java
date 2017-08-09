@@ -1,4 +1,4 @@
-package pers.xym.fx.service.impl;
+package pers.xym.fx.service;
 
 import java.util.List;
 import java.util.Map;

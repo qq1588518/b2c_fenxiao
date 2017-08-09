@@ -10,9 +10,15 @@
 			targetProject="fx\src\main\java" />
 		<javaClientGenerator targetPackage="pers.xym.fx.dao"
 			targetProject="fx\src\main\java" type="XMLMAPPER" />
+			<!-- 
+		<table schema="fx" tableName="fx_administrator_role" enableSelectByExample="flase" domainObjectName="AdministratorRole"
+			enableDeleteByExample="false" enableCountByExample="false"
+			enableUpdateByExample="false">
+		</table>
 		<table schema="fx" tableName="fx_permission" enableSelectByExample="flase" domainObjectName="Permission"
 			enableDeleteByExample="false" enableCountByExample="false"
 			enableUpdateByExample="false">
 		</table>
+			 -->
 	</context>
 </generatorConfiguration>
