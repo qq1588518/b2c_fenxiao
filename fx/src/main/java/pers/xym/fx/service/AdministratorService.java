@@ -23,7 +23,7 @@ public interface AdministratorService {
 	 *            每页容量 0为默认
 	 * @return {@link pers.xym.fx.util.ResponseJson}
 	 */
-	ResponseJson listAdministrator(int page, int pageSize);
+	List<Administrator> listAdministrator(int page, int pageSize);
 
 	/**
 	 * 管理员列表
