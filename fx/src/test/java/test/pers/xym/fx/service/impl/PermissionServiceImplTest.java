@@ -1,8 +1,7 @@
 package test.pers.xym.fx.service.impl;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
-
 import java.io.IOException;
+import java.util.List;
 
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
@@ -15,14 +14,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import pers.xym.fx.domain.Permission;
 import pers.xym.fx.service.PermissionService;
-import pers.xym.fx.util.ResponseJson;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(locations = { "classpath:spring.xml", "classpath:spring-mybatis.xml" })
 public class PermissionServiceImplTest {
-	private Logger logger = LoggerFactory.getLogger(PermissionServiceImplTest.class);
-	private static ObjectMapper objectMapper = new ObjectMapper();
+	Logger logger = LoggerFactory.getLogger(PermissionServiceImplTest.class);
+	public static ObjectMapper objectMapper = new ObjectMapper();
 
 	private PermissionService permissionService;
 
@@ -37,17 +36,17 @@ public class PermissionServiceImplTest {
 
 	@Test
 	public void testListPermission() {
-		ResponseJson responseJson = permissionService.listPermission();
 		try {
-			logger.error(1);
-			logger.error(objectMapper.writeValueAsString(responseJson));
-			logger.error(2);
+			List<Permission> permissions = permissionService.listPermission();
+			logger.error(objectMapper.writeValueAsString(permissions));
 		} catch (JsonGenerationException e) {
-			logger.error("exception",e);
+			logger.error("exception", e);
 		} catch (JsonMappingException e) {
-			logger.error("exception",e);
+			logger.error("exception", e);
 		} catch (IOException e) {
-			logger.error("exception",e);
+			logger.error("exception", e);
+		} catch (Exception e) {
+			logger.error("exception", e);
 		}
 	}
 

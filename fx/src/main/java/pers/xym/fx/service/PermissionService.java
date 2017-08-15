@@ -1,6 +1,8 @@
 package pers.xym.fx.service;
 
-import pers.xym.fx.util.ResponseJson;
+import java.util.List;
+
+import pers.xym.fx.domain.Permission;
 
 /**
  * 权限service
@@ -15,5 +17,5 @@ public interface PermissionService {
 	 * 
 	 * @return {@link pers.xym.fx.util.ResponseJson}
 	 */
-	ResponseJson listPermission();
+	List<Permission> listPermission();
 }
