@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import pers.xym.fx.domain.Administrator;
-import pers.xym.fx.util.ResponseJson;
+import pers.xym.fx.util.Page;
 
 /**
  * 管理员service
@@ -21,9 +21,9 @@ public interface AdministratorService {
 	 *            页码
 	 * @param pageSize
 	 *            每页容量 0为默认
-	 * @return {@link pers.xym.fx.util.ResponseJson}
+	 * @return {@link pers.xym.fx.util.Page}
 	 */
-	List<Administrator> listAdministrator(int page, int pageSize);
+	Page<Administrator> listAdministrator(int page, int pageSize);
 
 	/**
 	 * 管理员列表
@@ -34,45 +34,45 @@ public interface AdministratorService {
 	 *            页码
 	 * @param pageSize
 	 *            每页容量 0为默认
-	 * @return {@link pers.xym.fx.util.ResponseJson}
+	 * @return {@link pers.xym.fx.util.Page}
 	 */
-	ResponseJson listAdministrator(Map<String, String> condiition, int page, int pageSize);
+	Page<Administrator> listAdministrator(Map<String, String> condiition, int page, int pageSize);
 
 	/**
 	 * 添加管理员
 	 * 
 	 * @param administrator
 	 *            管理员信息
-	 * @return {@link pers.xym.fx.util.ResponseJson}
+	 * @return 
 	 */
-	ResponseJson addAdministrator(Administrator administrator);
+	boolean addAdministrator(Administrator administrator);
 
 	/**
 	 * 更改管理员信息
 	 * 
 	 * @param administrator
 	 *            更改之后的管理员信息 （id不可修改）
-	 * @return {@link pers.xym.fx.util.ResponseJson}
+	 * @return 
 	 */
-	ResponseJson updateAdministrator(Administrator administrator);
+	boolean updateAdministrator(Administrator administrator);
 
 	/**
 	 * 删除管理员
 	 * 
 	 * @param id
 	 *            管理员id
-	 * @return {@link pers.xym.fx.util.ResponseJson}
+	 * @return 
 	 */
-	ResponseJson deleteAdministrator(int id);
+	boolean deleteAdministrator(int id);
 
 	/**
 	 * 查找管理员
 	 * 
 	 * @param condition
 	 *            查询条件
-	 * @return {@link pers.xym.fx.util.ResponseJson}
+	 * @return 
 	 */
-	ResponseJson getAdministrator(Map<String, String> condition);
+	Administrator getAdministrator(Map<String, String> condition);
 
 	/**
 	 * 获取角色列表

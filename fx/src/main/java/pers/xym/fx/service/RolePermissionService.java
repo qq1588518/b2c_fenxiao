@@ -1,7 +1,6 @@
 package pers.xym.fx.service;
 
 import pers.xym.fx.domain.RolePermissionKey;
-import pers.xym.fx.util.ResponseJson;
 
 /**
  * 角色权限关系service
@@ -16,14 +15,14 @@ public interface RolePermissionService {
 	 * 
 	 * @param key
 	 *            {@link pers.xym.fx.domain.RolePermissionKey} 角色权限关系
-	 * @return {@link pers.xym.fx.util.ResponseJson}
+	 * @return 
 	 */
-	ResponseJson addKey(RolePermissionKey key);
+	boolean addKey(RolePermissionKey key);
 
 	/**
 	 * 删除角色权限关系
 	 * @param key
 	 * @return
 	 */
-	ResponseJson delKey(RolePermissionKey key);
+	boolean delKey(RolePermissionKey key);
 }

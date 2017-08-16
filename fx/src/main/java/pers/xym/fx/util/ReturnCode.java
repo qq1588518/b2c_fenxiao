@@ -11,4 +11,9 @@ public class ReturnCode {
 	 * 操作成功
 	 */
 	public static final int SUCCESS_CODE = 100000;
+	
+	/**
+	 * 需要登录
+	 */
+	public static final int NEED_LOGIN = 200001;
 }

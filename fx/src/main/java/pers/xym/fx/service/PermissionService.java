@@ -15,7 +15,7 @@ public interface PermissionService {
 	/**
 	 * 权限列表
 	 * 
-	 * @return {@link pers.xym.fx.util.ResponseJson}
+	 * @return 
 	 */
 	List<Permission> listPermission();
 }

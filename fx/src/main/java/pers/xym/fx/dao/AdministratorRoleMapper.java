@@ -1,7 +1,6 @@
 package pers.xym.fx.dao;
 
 import pers.xym.fx.domain.AdministratorRoleKey;
-import pers.xym.fx.domain.AdministratorRole;
 
 public interface AdministratorRoleMapper {
 

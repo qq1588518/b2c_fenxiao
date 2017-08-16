@@ -1,6 +1,10 @@
 package pers.xym.fx.dao;
 
+import java.util.HashMap;
+import java.util.List;
+
 import pers.xym.fx.domain.Administrator;
+import pers.xym.fx.util.Page;
 
 public interface AdministratorMapper {
     /**
@@ -50,4 +54,6 @@ public interface AdministratorMapper {
      * @mbg.generated Mon Aug 07 14:00:53 GMT+08:00 2017
      */
     int updateByPrimaryKey(Administrator record);
+    
+    List<Administrator> listAdministratorByPage(HashMap<String, Integer> map);
 }

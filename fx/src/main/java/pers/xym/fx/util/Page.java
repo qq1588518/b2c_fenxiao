@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
 /**
  * 分页工具类
  * 
@@ -11,6 +14,8 @@ import java.util.Map;
  * @date 2017年8月2日
  *
  */
+@Component
+@Scope("prototype")
 public class Page<E> {
 
 	public Page() {

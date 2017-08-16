@@ -1,7 +1,6 @@
 package pers.xym.fx.service;
 
 import pers.xym.fx.domain.AdministratorRoleKey;
-import pers.xym.fx.util.ResponseJson;
 
 /**
  * 管理员角色关系service
@@ -16,16 +15,16 @@ public interface AdministratorRoleService {
 	 * 
 	 * @param key
 	 *            {@link pers.xym.fx.domain.AdministratorRoleKey} 管理员角色关系
-	 * @return {@link pers.xym.fx.util.ResponseJson}
+	 * @return 
 	 */
-	ResponseJson addKey(AdministratorRoleKey key);
+	boolean addKey(AdministratorRoleKey key);
 
 	/**
 	 * 删除关系
 	 * 
 	 * @param key
 	 *            {@link pers.xym.fx.domain.AdministratorRoleKey} 管理员角色关系
-	 * @return {@link pers.xym.fx.util.ResponseJson}
+	 * @return 
 	 */
-	ResponseJson delKey(AdministratorRoleKey key);
+	boolean delKey(AdministratorRoleKey key);
 }

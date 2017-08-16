@@ -1,7 +1,8 @@
 package pers.xym.fx.service;
 
+import java.util.List;
+
 import pers.xym.fx.domain.Role;
-import pers.xym.fx.util.ResponseJson;
 
 /**
  * 角色service
@@ -14,31 +15,31 @@ public interface RoleService {
 	 * 
 	 * @param page
 	 * @param pageSize
-	 * @return {@link pers.xym.fx.util.ResponseJson}
+	 * @return
 	 */
-	ResponseJson listRole(int page, int pageSize);
+	List<Role> listRole(int page, int pageSize);
 	/**
 	 * 
 	 * @param role
-	 * @return {@link pers.xym.fx.util.ResponseJson}
+	 * @return
 	 */
-	ResponseJson addRole(Role role);
+	boolean addRole(Role role);
 	/**
 	 * 
 	 * @param role
-	 * @return {@link pers.xym.fx.util.ResponseJson}
+	 * @return
 	 */
-	ResponseJson updateRole(Role role);
+	boolean updateRole(Role role);
 	/**
 	 * 
 	 * @param id
-	 * @return {@link pers.xym.fx.util.ResponseJson}
+	 * @return
 	 */
-	ResponseJson deleteRole(int id);
+	boolean deleteRole(int id);
 	/**
 	 * 
 	 * @param id
-	 * @return {@link pers.xym.fx.util.ResponseJson}
+	 * @return
 	 */
-	ResponseJson getRole(int id);
+	Role getRole(int id);
 }

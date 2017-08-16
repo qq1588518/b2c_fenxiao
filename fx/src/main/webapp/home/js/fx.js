@@ -4,8 +4,8 @@
 // 或者，只是一个组件配置对象。
 // 我们晚点再讨论嵌套路由。
 const routes = [
-  { path: '/foo', component: Foo },
-  { path: '/bar', component: Bar }
+  { path: '/login', component: Login },
+  { path: '/index', component: Index }
 ]
 
 //  创建 router 实例，然后传 `routes` 配置
@@ -19,13 +19,13 @@ const router = new VueRouter({
 // 从而让整个应用都有路由功能
 const app = new Vue({
   router
-}).$mount('#app')
+}).$mount('#fx')
 
 
-var user = new vue({
-	data : {
-		id,
-		username,
-		token
-	}
-})
+//var user = new Vue({
+//	data : {
+//		id,
+//		username,
+//		token
+//	}
+//})
