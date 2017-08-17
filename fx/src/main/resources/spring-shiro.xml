@@ -5,17 +5,24 @@
 		http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
+
 	<bean id="myRealm" class="pers.xym.fx.realm.AdministratorRealm">
 	</bean>
 
-	<bean id="securityManager" class="org.apache.shiro.mgt.DefaultSecurityManager">
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
 		<property name="realm" ref="myRealm" />
+	</bean>
+	
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager" />
 	</bean>
 
 	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
 
 	<bean
 		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="staticMethod"
+			value="org.apache.shiro.SecurityUtils.setSecurityManager" />
 		<property name="arguments" ref="securityManager" />
 	</bean>
 
