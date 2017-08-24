@@ -14,6 +14,12 @@
     <result column="nickname" jdbcType="VARCHAR" property="nickname" />
     <result column="ban" jdbcType="BIT" property="ban" />
   </resultMap>
+  <resultMap type="string" id="AdministratorRoles">
+  	<result column="name" jdbcType="VARCHAR"/>
+  </resultMap>
+  <resultMap type="string" id="AdministratorPermissions">
+  	<result column="permission" jdbcType="VARCHAR"/>
+  </resultMap>
   <sql id="Base_Column_List">
     <!--
       WARNING - @mbg.generated
@@ -131,4 +137,65 @@
       nickname = #{nickname,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="listAdministratorByPage" resultMap="BaseResultMap">
+  	select
+  	<include refid="Base_Column_List" />
+  	from fx_administrator
+	limit #{fristParameter},#{secondParameter}
+  </select>
+  <select id="selectByCondition"  parameterType="pers.xym.fx.domain.Administrator" resultMap="BaseResultMap">
+  	select
+  	<include refid="Base_Column_List" />
+  	from fx_administrator
+  	<where>
+  		<if test="id != null">
+  			id = #{id, jdbcType=INTEGER}
+  		</if>
+  		<if test="username != null">
+  			and username = #{username,jdbcType=VARCHAR}
+  		</if>
+  		<if test="password != null">
+  			and password = #{password,jdbcType=VARCHAR}
+  		</if>
+  		<if test="nickname != null">
+  			and nickname = #{nickname,jdbcType=VARCHAR}
+  		</if>
+  	</where>
+  </select>
+  <select id="listAdministratorByPageAndCondition" resultMap="BaseResultMap">
+  	select
+  	<include refid="Base_Column_List" />
+	from fx_administrator
+	<where>
+		<if test="id != null">
+  			id = #{id, jdbcType=INTEGER}
+  		</if>
+  		<if test="username != null">
+  			and username like #{username,jdbcType=VARCHAR}
+  		</if>
+  		<if test="nickname != null">
+  			and nickname like #{nickname,jdbcType=VARCHAR}
+  		</if>
+	</where>  	
+	limit #{fristParameter},#{secondParameter}
+  </select>
+  <select id="getTotalRows">
+  	select count(id) from fx_administrator
+  </select>
+  <select id="getRoles" resultMap="AdministratorRoles">
+  	select role.name
+  	from fx_administrator admin
+  	left join fx_administrator_role ar on admin.id = ar.admin_id
+  	left join fx_role role on ar.role_id = role.id
+  	where admin.id = #{aid}
+  </select>
+  <select id="getPermissions" resultMap="AdministratorPermissions">
+  	select permission.permission
+  	from fx_administrator admin
+  	left join fx_administrator_role ar on admin.id = ar.admin_id
+  	left join fx_role role on ar.role_id = role.id
+  	left join fx_role_permission rp on role.id = rp.role_id
+  	left join fx_permission permission on rp.permission_id = permission.id
+  	where admin.id = #{aid} 
+  </select>
 </mapper>

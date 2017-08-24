@@ -2,9 +2,9 @@ package pers.xym.fx.dao;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 
 import pers.xym.fx.domain.Administrator;
-import pers.xym.fx.util.Page;
 
 public interface AdministratorMapper {
     /**
@@ -55,5 +55,44 @@ public interface AdministratorMapper {
      */
     int updateByPrimaryKey(Administrator record);
     
+    /**
+     * 分页列出管理员
+     * @param map 参数
+     * @return
+     */
     List<Administrator> listAdministratorByPage(HashMap<String, Integer> map);
+    
+    /**
+     * 按条件查找单个管理员
+     * @param record
+     * @return
+     */
+    Administrator selectByCondition(Administrator record);
+    
+    /**
+     * 模糊搜索管理员（分页）
+     * @param administrator
+     * @return
+     */
+    List<Administrator> listAdministratorByPageAndCondition(Administrator administrator, HashMap<String, Integer> map);
+    
+    /**
+     * 获取总行数
+     * @return
+     */
+    int getTotalRows();
+    
+    /**
+     * 获取管理员角色
+     * @param aid 管理员id
+     * @return
+     */
+    Set<String> getRoles(int aid);
+    
+    /**
+     * 获取管理员权限
+     * @param aid 管理员id
+     * @return
+     */
+    Set<String> getPermissions(int aid);
 }

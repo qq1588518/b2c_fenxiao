@@ -3251,7 +3251,8 @@ table.text-center th {
 .login-box,
 .register-box {
   width: 360px;
-  margin: 7% auto;
+  margin: 0 auto;
+  padding-top:7%;
 }
 @media (max-width: 768px) {
   .login-box,

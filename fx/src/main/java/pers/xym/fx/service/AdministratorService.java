@@ -1,9 +1,7 @@
 package pers.xym.fx.service;
 
-import java.util.List;
-import java.util.Map;
-
 import pers.xym.fx.domain.Administrator;
+import pers.xym.fx.exception.UsernameExists;
 import pers.xym.fx.util.Page;
 
 /**
@@ -36,23 +34,23 @@ public interface AdministratorService {
 	 *            每页容量 0为默认
 	 * @return {@link pers.xym.fx.util.Page}
 	 */
-	Page<Administrator> listAdministrator(Map<String, String> condiition, int page, int pageSize);
+	Page<Administrator> listAdministrator(Administrator administrator, int page, int pageSize);
 
 	/**
 	 * 添加管理员
 	 * 
 	 * @param administrator
 	 *            管理员信息
-	 * @return 
+	 * @return
 	 */
-	boolean addAdministrator(Administrator administrator);
+	boolean addAdministrator(Administrator administrator) throws UsernameExists;
 
 	/**
 	 * 更改管理员信息
 	 * 
 	 * @param administrator
 	 *            更改之后的管理员信息 （id不可修改）
-	 * @return 
+	 * @return
 	 */
 	boolean updateAdministrator(Administrator administrator);
 
@@ -61,7 +59,7 @@ public interface AdministratorService {
 	 * 
 	 * @param id
 	 *            管理员id
-	 * @return 
+	 * @return
 	 */
 	boolean deleteAdministrator(int id);
 
@@ -70,25 +68,28 @@ public interface AdministratorService {
 	 * 
 	 * @param condition
 	 *            查询条件
-	 * @return 
+	 * @return
 	 */
-	Administrator getAdministrator(Map<String, String> condition);
+	Administrator findAdministrator(Administrator administrator);
 
 	/**
-	 * 获取角色列表
+	 * 获取管理员
 	 * 
-	 * @param administrator
-	 *            管理员账户
-	 * @return 角色列表
+	 * @param id
+	 *            管理员id
+	 * @return
 	 */
-	List<String> getRoles(Administrator administrator);
+	Administrator getAdministrator(int id);
 
 	/**
-	 * 获取权限列表
+	 * 登录
 	 * 
-	 * @param administrator
-	 * @return 权限列表
+	 * @param username
+	 *            用户名
+	 * @param password
+	 *            密码
+	 * @return
+	 * @throws UserNotFoundException
 	 */
-	List<String> getPermissions(Administrator administrator);
-
+	void login(String username, String password, boolean rememberMe);
 }

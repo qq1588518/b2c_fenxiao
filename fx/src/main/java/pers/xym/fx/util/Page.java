@@ -2,7 +2,6 @@ package pers.xym.fx.util;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -105,8 +104,8 @@ public class Page<E> {
 	 * 
 	 * @return
 	 */
-	public Map<String, Integer> getMysqlPageParam() {
-		Map<String, Integer> map = new HashMap<>();
+	public HashMap<String, Integer> getMysqlPageParam() {
+		HashMap<String, Integer> map = new HashMap<>();
 		map.put("fristParameter", (page - 1) * pageSize);
 		map.put("secondParameter", pageSize);
 		return map;

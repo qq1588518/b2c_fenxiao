@@ -18,7 +18,7 @@
 <link rel="stylesheet"
 	href="bower_components/Ionicons/css/ionicons.min.css">
 <!-- Theme style -->
-<link rel="stylesheet" href="css/AdminLTE.min.css">
+<link rel="stylesheet" href="css/AdminLTE.css">
 <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
 <link rel="stylesheet" href="css/skins/_all-skins.min.css">
@@ -36,7 +36,6 @@
 <!-- bootstrap wysihtml5 - text editor -->
 <link rel="stylesheet"
 	href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-<link rel="stylesheet" href="plugins/iCheck/square/blue.css">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -59,7 +58,7 @@
 				<span class="logo-lg"><b>B2C</b> 微信分销商城</span>
 			</a>
 			<!-- Header Navbar: style can be found in header.less -->
-			<nav class="navbar navbar-static-top">
+			<nav class="navbar navbar-static-top" v-if="islogin">
 				<!-- Sidebar toggle button-->
 				<a href="#" class="sidebar-toggle" data-toggle="push-menu"
 					role="button"> <span class="sr-only">Toggle navigation</span>
@@ -69,17 +68,16 @@
 					<ul class="nav navbar-nav">
 						<li class="dropdown user user-menu"><a href="#"
 							class="dropdown-toggle" data-toggle="dropdown"> <img
-								src="img/user2-160x160.jpg" class="user-image" alt="User Image">
-								<span class="hidden-xs">Alexander Pierce</span>
+								:src="avatar" class="user-image">
+								<span class="hidden-xs">{{nickname}}</span>
 						</a>
 							<ul class="dropdown-menu">
 								<!-- User image -->
-								<li class="user-header"><img src="img/user2-160x160.jpg"
+								<li class="user-header"><img :src="avatar"
 									class="img-circle" alt="User Image">
 
 									<p>
-										Alexander Pierce - Web Developer <small>Member since
-											Nov. 2012</small>
+										{{nickname}}
 									</p></li>
 								<!-- Menu Body -->
 							</ul></li>
@@ -96,38 +94,36 @@
 				<!-- Sidebar user panel -->
 				<div class="user-panel">
 					<div class="pull-left image">
-						<img src="img/user2-160x160.jpg" class="img-circle"
+						<img :src="avatar" class="img-circle"
 							alt="User Image">
 					</div>
 					<div class="pull-left info">
-						<p>Alexander Pierce</p>
-						<a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+						<p>{{nickname}}</p>
 					</div>
 				</div>
 				<!-- sidebar menu: : style can be found in sidebar.less -->
 				<ul class="sidebar-menu" data-widget="tree">
 					<li class="header">分销商城系统管理</li>
-					<li class="active treeview"><a href="#"> <i
-							class="fa fa-dashboard"></i> <span>Dashboard</span> <span
+					<li id="nav1" class="treeview"><a href="#"> <i
+							class="fa fa-dashboard"></i> <span>权限管理</span> <span
 							class="pull-right-container"> <i
 								class="fa fa-angle-left pull-right"></i>
 						</span>
 					</a>
 						<ul class="treeview-menu">
-							<li class="active"><a href="index.html"><i
+							<li id="nav11"><a href="##1"><i
 									class="fa fa-circle-o"></i> Dashboard v1</a></li>
-							<li><a href="index2.html"><i class="fa fa-circle-o"></i>
+							<li id="nav12"><a href="##2"><i class="fa fa-circle-o"></i>
 									Dashboard v2</a></li>
 						</ul></li>
 					<li class="treeview"><a href="#"> <i class="fa fa-files-o"></i>
 							<span>Layout Options</span> <span class="pull-right-container">
-								<span class="label label-primary pull-right">4</span>
 						</span>
 					</a>
 						<ul class="treeview-menu">
-							<li><a href="pages/layout/top-nav.html"><i
+							<li><a href="##"><i
 									class="fa fa-circle-o"></i> Top Navigation</a></li>
-							<li><a href="pages/layout/boxed.html"><i
+							<li><a href="##"><i
 									class="fa fa-circle-o"></i> Boxed</a></li>
 							<li><a href="pages/layout/fixed.html"><i
 									class="fa fa-circle-o"></i> Fixed</a></li>
@@ -281,8 +277,6 @@
 
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper">
-			<router-link to="/login">Go to login</router-link>
-   			<router-link to="/index">Go to index</router-link>
    			<router-view></router-view>
 		</div>
 		<!-- /.content-wrapper -->
@@ -293,6 +287,7 @@
 			<strong>Copyright &copy; 2017 <a href="http://kraken.lol">Kraken</a>.
 			</strong> All rights reserved.
 		</footer>
+	</div>
 
 
 		<!-- jQuery 3 -->
@@ -336,10 +331,14 @@
 		<!-- AdminLTE dashboard demo (This is only for demo purposes)
 	<script src="js/pages/dashboard.js"></script>
 	 -->
-	 	<script src="plugins/iCheck/icheck.min.js"></script>
 		<!-- AdminLTE for demo purposes 
 	<script src="js/demo.js"></script>
 	-->
+	
+		<!-- layer -->
+		<script type="text/javascript" src ="js/layer/layer.js"></script>
+		
+		<!-- vue & router -->
 		<script src="js/vue/vue.js"></script>
 		<script src="js/vue/vue-router.js"></script>
 		
